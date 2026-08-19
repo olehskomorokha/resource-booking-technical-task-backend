@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ResourceBooking.Data;
+using System.Text.Json.Serialization;
 using ResourceBooking.Data.Interfaces;
 using ResourceBooking.Data.Repositories;
 using ResourceBooking.Services.Interfaces;
@@ -8,9 +9,15 @@ using ResourceBooking.Services.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters
+        .Add(new JsonStringEnumConverter());
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 // register database
 builder.Services.AddDbContext<AppDbContext>(options =>
