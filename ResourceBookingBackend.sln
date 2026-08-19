@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceBooking.API", "ResourceBooking.API\ResourceBooking.API.csproj", "{9992B316-56A9-4970-9200-78EFF0CD0D48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceBooking.Services", "ResourceBooking.Services\ResourceBooking.Services.csproj", "{0EB06F0E-1E39-42B3-AB10-660509593C28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceBooking.Data", "ResourceBooking.Data\ResourceBooking.Data.csproj", "{F176F76E-CAD7-42F2-AB17-D896D0167B17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9992B316-56A9-4970-9200-78EFF0CD0D48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9992B316-56A9-4970-9200-78EFF0CD0D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9992B316-56A9-4970-9200-78EFF0CD0D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9992B316-56A9-4970-9200-78EFF0CD0D48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB06F0E-1E39-42B3-AB10-660509593C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB06F0E-1E39-42B3-AB10-660509593C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB06F0E-1E39-42B3-AB10-660509593C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB06F0E-1E39-42B3-AB10-660509593C28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F176F76E-CAD7-42F2-AB17-D896D0167B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F176F76E-CAD7-42F2-AB17-D896D0167B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F176F76E-CAD7-42F2-AB17-D896D0167B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F176F76E-CAD7-42F2-AB17-D896D0167B17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
