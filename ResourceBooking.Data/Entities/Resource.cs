@@ -6,7 +6,8 @@ namespace ResourceBooking.Data.Entities;
 public class Resource
 {
     public int Id { get; set; }
-    [MaxLength(100)] public string Name { get; set; } = string.Empty;
+    [MaxLength(100)] 
+    public string Name { get; set; } = string.Empty;
     public TypeOfResource Type { get; set; }
     public int Capacity { get; set; }
     public bool IsActive { get; set; }

@@ -2,7 +2,7 @@
 
 public enum TypeOfResource
 {
-    Room,
-    Hall,
-    Other
+    Room = 1,
+    Hall = 2,
+    Other = 3
 }

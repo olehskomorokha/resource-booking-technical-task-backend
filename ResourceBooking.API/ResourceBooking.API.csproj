@@ -15,11 +15,13 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="10.2.3"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="10.2.3" />
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.2.3"/>
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\ResourceBooking.Data\ResourceBooking.Data.csproj"/>
+        <ProjectReference Include="..\ResourceBooking.Services\ResourceBooking.Services.csproj" />
     </ItemGroup>
 
 </Project>
