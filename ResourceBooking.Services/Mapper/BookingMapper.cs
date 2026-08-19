@@ -10,6 +10,7 @@ public static class BookingMapper
     {
         return new BookingDto()
         {
+            Id = booking.Id,
             ResourceId = booking.ResourceId,
             UserName =  booking.UserName,
             StartTime = booking.StartTime,

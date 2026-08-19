@@ -22,7 +22,7 @@ public class BookingRepository : IBookingRepository
     
     public async Task<List<Booking>> GetByResourceIdAsync(int resourceId)
     {
-        return await _context.Bookings.Include(b => b.Resource).Where(b => b.ResourceId == resourceId).ToListAsync();
+        return await _context.Bookings.Include(b => b.Resource).Where(x => x.ResourceId == resourceId && x.Status != Status.Cancelled).ToListAsync();
     }
     
     public async Task<Booking> CreateIfAvailableAsync(Booking booking)
