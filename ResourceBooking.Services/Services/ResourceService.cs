@@ -36,8 +36,8 @@ public class ResourceService : IResourceService
         {
             throw new ArgumentNullException(nameof(resourceDto));
         }
-        var resourceToAdd = ResourceMapper.MapToAddResource(resourceDto);
-        await _resourceRepository.AddAsync(resourceToAdd);
+        
+        await _resourceRepository.AddAsync(ResourceMapper.MapToAddResource(resourceDto));
     }
 
     public async Task UpdateAsync(int id, UpdateResourceDto resourceDto)

@@ -23,10 +23,10 @@ public class ResourceRepository : IResourceRepository
         return await _context.Resources.FirstOrDefaultAsync(x => x.Id == id);
     }
 
-    public Task AddAsync(Resource model)
+    public async Task AddAsync(Resource model)
     {
-        _context.Resources.Add(model);
-        return _context.SaveChangesAsync();
+        await _context.Resources.AddAsync(model);
+        await _context.SaveChangesAsync();
     }
 
     public async Task UpdateAsync(Resource model)
