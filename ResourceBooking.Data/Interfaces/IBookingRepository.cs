@@ -6,6 +6,6 @@ public interface IBookingRepository
 {
     public Task<Booking> GetByIdAsync(int id);
     public Task<List<Booking>> GetByResourceIdAsync(int resourceId);
-    public Task AddAsync(Booking booking);
+    public Task<Booking> CreateIfAvailableAsync(Booking booking);
     public Task CancelAsync(Booking booking);
 }

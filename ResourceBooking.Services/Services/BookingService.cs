@@ -1,6 +1,7 @@
-﻿using ResourceBooking.Data.Entities;
+using ResourceBooking.Data.Entities;
 using ResourceBooking.Data.Enums;
 using ResourceBooking.Data.Interfaces;
+using ResourceBooking.Services.Exceptions;
 using ResourceBooking.Services.Interfaces;
 using ResourceBooking.Services.Mapper;
 using ResourceBooking.Services.Models.Booking;
@@ -24,12 +25,25 @@ public class BookingService : IBookingService
 
     public async Task AddAsync(AddBookingDto booking)
     {
+        if (booking.StartTime >= booking.EndTime)
+        {
+            throw new BookingConflictException(
+                "Booking Conflict", "Start time must be earlier than end time.");
+        }
         if (booking == null)
         {
             throw new ArgumentNullException(nameof(booking));
         }
+
+        var bookingToAdd = BookingMapper.MapToAddBooking(booking);
         
-        await _bookingRepository.AddAsync(BookingMapper.MapToAddBooking(booking));
+        var created = await _bookingRepository.CreateIfAvailableAsync(bookingToAdd);
+        if (created == null)
+        {
+            throw new BookingConflictException(
+                "Booking Conflict", "Resource is already booked for this time.");
+        }
+        
         
     }
 

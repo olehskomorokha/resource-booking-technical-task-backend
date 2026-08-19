@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ResourceBooking.Services.Exceptions;
 using ResourceBooking.Services.Interfaces;
 using ResourceBooking.Services.Models.Booking;
 
@@ -24,8 +25,15 @@ public class BookingController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> AddAsync(AddBookingDto booking)
     {
-        await _bookingService.AddAsync(booking);
-        return Ok();
+        try
+        {
+            await _bookingService.AddAsync(booking);
+            return Ok();
+        }
+        catch (BookingConflictException ex)
+        {
+            return Conflict(new { message = ex.Message, code = ex.Code });
+        }
     }
 
     [HttpPut("{id}")]
