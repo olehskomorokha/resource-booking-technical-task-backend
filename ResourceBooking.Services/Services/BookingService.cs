@@ -1,4 +1,3 @@
-using ResourceBooking.Data.Entities;
 using ResourceBooking.Data.Enums;
 using ResourceBooking.Data.Interfaces;
 using ResourceBooking.Services.Exceptions;
@@ -37,7 +36,7 @@ public class BookingService : IBookingService
 
         var bookingToAdd = BookingMapper.MapToAddBooking(booking);
         
-        var created = await _bookingRepository.CreateIfAvailableAsync(bookingToAdd);
+        var created = await _bookingRepository.AddAsync(bookingToAdd);
         if (created == null)
         {
             throw new BookingConflictException(

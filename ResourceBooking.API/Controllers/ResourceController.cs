@@ -31,7 +31,7 @@ public class ResourceController : ControllerBase
     public async Task<IActionResult> AddAsync(AddResourceDto resourceDto)
     {
         await _resourceService.AddAsync(resourceDto);
-        return Ok();
+        return StatusCode(StatusCodes.Status201Created);
     }
 
     [HttpPut("{id}")]

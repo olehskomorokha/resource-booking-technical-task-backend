@@ -28,7 +28,7 @@ public class BookingController : ControllerBase
         try
         {
             await _bookingService.AddAsync(booking);
-            return Ok();
+            return StatusCode(StatusCodes.Status201Created);
         }
         catch (BookingConflictException ex)
         {

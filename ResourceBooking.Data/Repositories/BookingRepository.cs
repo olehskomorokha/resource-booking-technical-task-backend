@@ -25,7 +25,7 @@ public class BookingRepository : IBookingRepository
         return await _context.Bookings.Include(b => b.Resource).Where(x => x.ResourceId == resourceId && x.Status != Status.Cancelled).ToListAsync();
     }
     
-    public async Task<Booking> CreateIfAvailableAsync(Booking booking)
+    public async Task<Booking> AddAsync(Booking booking)
     {
         await using var transaction =
             await _context.Database.BeginTransactionAsync(
